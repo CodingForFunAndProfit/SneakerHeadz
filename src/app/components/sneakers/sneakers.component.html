@@ -1,0 +1,23 @@
+<h2>Sneaker</h2>
+<div>
+  <label for="new-sneaker">Sneaker name: </label>
+  <input id="new-sneaker" #sneakerName />
+
+  <button
+    class="add-button"
+    (click)="add(sneakerName.value); sneakerName.value = ''"
+  >
+    Add sneaker
+  </button>
+</div>
+
+<ul class="sneakers">
+  <li *ngFor="let sneaker of sneakers">
+    <a routerLink="/detail/{{ sneaker.id }}"
+      ><span class="badge">{{ sneaker.id }}</span> {{ sneaker.name }}</a
+    >
+    <button class="delete" title="delete sneaker" (click)="delete(sneaker)">
+      x
+    </button>
+  </li>
+</ul>

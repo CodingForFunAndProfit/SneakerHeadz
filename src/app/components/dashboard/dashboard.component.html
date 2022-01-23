@@ -1,0 +1,7 @@
+<h2>Top Sneakers</h2>
+<div class="sneakers-menu">
+  <a *ngFor="let sneaker of sneakers" routerLink="/detail/{{ sneaker.id }}">
+    {{ sneaker.name }}
+  </a>
+</div>
+<app-sneaker-search></app-sneaker-search>
